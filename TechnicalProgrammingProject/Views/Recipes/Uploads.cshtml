@@ -1,19 +1,13 @@
 ﻿@model TechnicalProgrammingProject.Models.UploadsViewModel
 
-@{
-    ViewBag.Title = "Uploads";
-}
-
-<h2>Uploads</h2>
+<h2>@Model.UploaderName's Uploads</h2>
+<hr />
 
 <div>
-    <h4>UploadsViewModel</h4>
-    <hr />
     <div class="row">
         @foreach (var userRecipe in Model.Recipes)
         {
             @Html.Partial("_RecipeCard", userRecipe);
         }
     </div>
-
 </div>

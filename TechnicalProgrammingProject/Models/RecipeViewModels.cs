@@ -31,6 +31,8 @@ namespace TechnicalProgrammingProject.Models
 
         [Image]
         public HttpPostedFileBase Image { get; set; }
+        public byte[] recipePicture { get; set; }
+
         [Required]
         public string Directions { get; set; }
         public virtual ICollection<Ingredient> Ingredients { get; set; }

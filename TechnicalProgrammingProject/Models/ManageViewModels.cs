@@ -7,6 +7,7 @@ namespace TechnicalProgrammingProject.Models
 {
     public class ProfileViewModel
     {
+        public string ID { get; set; }
         public string DisplayName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

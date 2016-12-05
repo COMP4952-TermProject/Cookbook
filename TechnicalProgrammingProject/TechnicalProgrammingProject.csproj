@@ -335,11 +335,10 @@
     <Content Include="Views\Shared\EditorTemplates\Ingredient.cshtml" />
     <Content Include="Views\Recipes\AddIngredient.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
-    <Content Include="Views\Profile\CurrentProfile.cshtml" />
+    <Content Include="Views\Profile\Current\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Profile\Edit.cshtml" />
     <Content Include="Views\Recipes\Uploads.cshtml" />
-    <Content Include="Views\Recipes\CurrentUploads.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Recipes\Search.cshtml" />
     <Content Include="Views\Users\_ManageRecipePartial.cshtml" />
@@ -355,6 +354,10 @@
     <Content Include="Views\Recipes\Edit.cshtml" />
     <Content Include="Views\Recipes\Public\Details.cshtml" />
     <Content Include="Views\Recipes\Current\Details.cshtml" />
+    <Content Include="Views\Recipes\Current\Uploads.cshtml" />
+    <Content Include="Views\Recipes\Current\Empty.cshtml" />
+    <Content Include="Views\Cookbooks\Current\Index.cshtml" />
+    <Content Include="Views\Cookbooks\Current\Empty.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -387,6 +390,7 @@
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Cookbook.cs" />
+    <Compile Include="Models\CookbookViewModels.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ManageRecipeViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />

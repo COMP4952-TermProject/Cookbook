@@ -1,0 +1,20 @@
+﻿@model TechnicalProgrammingProject.Models.CookbookViewModel
+
+
+<h2>My Cookbook</h2>
+<hr />
+
+@using (Html.BeginForm("Search", "Cookbooks", FormMethod.Get, new { @class = "form-horizontal", role = "form" }))
+{
+    <input type="search" name="searchTerm" />
+    <input type="submit" value="Search By Name, Tag, or Ingredient" />
+}
+
+<p>@ViewBag.Message</p>
+
+<div class="row">
+    @foreach (var userRecipe in Model.Recipes)
+    {
+        @Html.Partial("_RecipeCard_CookBook", userRecipe);
+    }
+</div>

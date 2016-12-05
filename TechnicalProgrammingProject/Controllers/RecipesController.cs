@@ -89,7 +89,23 @@ namespace TechnicalProgrammingProject.Controllers
         // GET: Recipes/Create
         public ActionResult Create()
         {
-            return View();
+
+            CreateRecipeViewModel model = new CreateRecipeViewModel();
+            
+            
+            using (MemoryStream ms = new MemoryStream())
+            {
+                    //copy to memorystream
+                    var path = HttpContext.Server.MapPath("~/Content/Images/food-icon.png");
+                    //create image from path
+                    Image foodImage = Image.FromFile(path);
+                    //save to stream
+                    foodImage.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    //store bytes inside recipe
+                    byte[] image = ms.ToArray();
+                    model.recipePicture = image;
+            }
+            return View(model);
         }
 
         /// <summary>

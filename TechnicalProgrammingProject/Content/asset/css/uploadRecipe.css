@@ -4,3 +4,12 @@
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+.image-size {
+    width: 230px;
+    height: 200px;
+}
+
+input {
+    margin: 0px;
+}

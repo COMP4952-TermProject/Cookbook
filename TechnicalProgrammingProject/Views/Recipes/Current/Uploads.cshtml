@@ -1,0 +1,16 @@
+﻿@model TechnicalProgrammingProject.Models.UploadsViewModel
+
+<h2>My Uploads</h2>
+<hr />
+
+<div>
+    <div class="row">
+        @foreach (var userRecipe in Model.Recipes)
+        {
+            @Html.Partial("_RecipeCard", userRecipe);
+        }
+    </div>
+    <input type="button" class="btn btn-default" value="Upload a Recipe" onclick="location.href='@Url.Action("Create", "Recipes")'" />
+    <input type="button" class="btn btn-default" value="Delete Recipes" onclick="location.href='@Url.Action("Delete", "Recipes")'" />
+    <input type="button" class="btn btn-default" value="Back to your profile" onclick="location.href='@Url.Action("Index", "Profile")'" />
+</div>

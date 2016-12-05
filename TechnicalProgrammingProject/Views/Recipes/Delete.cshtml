@@ -12,7 +12,7 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.UploadedRecipes[0].ID)
+                @Html.DisplayNameFor(model => model.UploadedRecipes[0].Name)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.UploadedRecipes[0].Image)
@@ -32,13 +32,10 @@
         {
             <tr>
                 <td>
-                    @Html.HiddenFor(m => Model.UploadedRecipes[i].ID)
-                </td>
-                <td>
                     @Html.DisplayFor(m => Model.UploadedRecipes[i].Name)
                 </td>
                 <td>
-                    <img class="recipeImage" src=@Html.DisplayFor(m => Model.UploadedRecipes[i].Image)>
+                    @Html.Image(Model.UploadedRecipes[i].Image, new { @class = "delete-image" })
                 </td>
                 <td>
                     @Html.DisplayFor(m => Model.UploadedRecipes[i].DateUploaded)

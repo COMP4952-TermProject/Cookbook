@@ -16,6 +16,7 @@ hr {
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
+    width:80%;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -54,10 +55,11 @@ ul.unstyled{
     background-color: #f44336;
     color: white;
     opacity: 1;
+    width:90%;
+    margin: auto;
+    display:block;
     transition: opacity 0.6s;
-    margin-bottom: 15px;
-    margin-top:10px;
-    margin-left:23px;
+    margin-top: 20px;
 }
 
 .alert.success {background-color: #4CAF50;}
@@ -127,4 +129,16 @@ input:-moz-placeholder {
 }
 input::-webkit-input-placeholder {
 	color: #999;
+}
+#mainCarousel{
+    width: 100%;
+    margin: auto;
+    display:block;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  and (min-resolution:.001dpcm) {
+    #mainCarousel{
+        width: 90%;
+        margin-right:170px;
+    }
 }

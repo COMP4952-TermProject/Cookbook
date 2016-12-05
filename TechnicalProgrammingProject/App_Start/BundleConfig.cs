@@ -23,8 +23,7 @@ namespace TechnicalProgrammingProject
             bundles.Add(new ScriptBundle("~/bundles/datepicker").Include(
                     "~/Content/asset/js/datepickerReady.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/recipeC").Include(
-                   "~/Content/asset/js/recipecard.js"));
+           
 
             bundles.Add(new ScriptBundle("~/bundles/login").Include(
                      "~/Content/asset/js/login.js"));

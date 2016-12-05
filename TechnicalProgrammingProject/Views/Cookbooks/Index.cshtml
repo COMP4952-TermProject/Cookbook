@@ -8,8 +8,7 @@
 
 @using (Html.BeginForm("Search", "Cookbooks", FormMethod.Get, new { @class = "form-horizontal", role = "form" }))
 {
-    <input type="search" name="searchTerm" />
-    <input type="submit" value="Search By Name, Tag, or Ingredient" />
+    <input type="search" name="searchTerm" placeholder="Search..."/>
 }
 
 <p>@ViewBag.Message</p>

@@ -27,21 +27,6 @@
         -o-transition: all 1s;
     }
 
-
-    #cardbodies :hover .imges{
-         animation: shadowThrobs 0.9s infinite;
-        animation-direction: alternate;
-        -webkit-animation: shadowThrobs 0.9s ease-out infinite;
-        -webkit-animation-direction: alternate;     
-    }
-     @keyframes shadowThrobs {
-	        from {box-shadow: 0 0 30px 10px rgba(255,106,0, 0.9);}
-	        to {box-shadow: 0 0 30px 10px rgba(255,106,0, 0.2);}
-        }
-    @-webkit-keyframes shadowThrobs {
-	    from {box-shadow: 0 0 30px 10px rgba(255,106,0, 0.9);}
-	    to {box-shadow: 0 0 30px 10px rgba(255,106,0, 0.2);}
-    }
     .recipeCards .btn {
         margin-bottom: 30px;
     }
@@ -78,21 +63,6 @@
         -o-transition: all 1s;
     }
 
-
-    #cardbodies :hover .imges{
-         animation: shadowThrobs 0.9s infinite;
-        animation-direction: alternate;
-        -webkit-animation: shadowThrobs 0.9s ease-out infinite;
-        -webkit-animation-direction: alternate;     
-    }
-     @keyframes shadowThrobs {
-	        from {box-shadow: 0 0 30px 10px rgba(255,106,0, 0.9);}
-	        to {box-shadow: 0 0 30px 10px rgba(255,106,0, 0.2);}
-        }
-    @-webkit-keyframes shadowThrobs {
-	    from {box-shadow: 0 0 30px 10px rgba(255,106,0, 0.9);}
-	    to {box-shadow: 0 0 30px 10px rgba(255,106,0, 0.2);}
-    }
     .recipeCards .btn {
         margin-bottom: 30px;
     }

@@ -1,19 +1,19 @@
 ﻿@model TechnicalProgrammingProject.Models.Ingredient
 
 <div class="ingredient form-group">
-    <div class="col-md-4">
+    <div class="col-md-7">
         @Html.TextBoxFor(i => i.Name, new { @class = "form-control", placeholder = "Name" })
         @Html.ValidationMessageFor(i => i.Name)
     </div>
-    <div class="col-md-3">
-        @Html.EditorFor(i => i.Quantity, new { @min = "0", @class = "form-control", placeholder = "Quantity" })
+    <div class="col-md-2">
+        @Html.TextBoxFor(i => i.Quantity, new { @min = "0", @class = "form-control", placeholder = "Quantity" })
         @Html.ValidationMessageFor(i => i.Quantity)
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
         @Html.TextBoxFor(i => i.Unit, new { @class = "form-control", placeholder = "Unit" })
         @Html.ValidationMessageFor(i => i.Unit)
     </div>
-    <div class="col-md-2">
+    <div class="col-md-1">
         <button type="button" class="btn btn-default delete-ingredient">
             <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
         </button>

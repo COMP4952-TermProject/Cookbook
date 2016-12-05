@@ -21,16 +21,50 @@ namespace TechnicalProgrammingProject.Controllers
         /// </summary>
         /// <returns></returns>
         // GET: Cookbooks
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
-            var userId = User.Identity.GetUserId();
-            var recipes = db.Recipes.Where(r => r.Cookbooks.Any(c => c.ApplicationUserID == userId));
+            //id is not present in url
+            if (id == null)
+            {
+                id = User.Identity.GetUserId();
+            }
 
+            var user = db.Users.Find(id);
+            //id is not found
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+
+            // find recipes
+            var recipes = db.Recipes.Where(r => r.Cookbooks.Any(c => c.ApplicationUserID == user.Id));
+
+            //build model
+            CookbookViewModel model = new CookbookViewModel()
+            {
+                ID = user.Id,
+                DisplayName = user.DisplayName,
+                Recipes = recipes.ToList()
+            };
+
+            // no recipes found
             if (recipes.ToList().Count == 0)
             {
-                return View("Empty");
+                // not current user
+                if (user.Id != User.Identity.GetUserId())
+                {
+                    return View("Empty", model);
+                }
+                //current user
+                return View("~/Views/Cookbooks/Current/Empty.cshtml", model);
             }
-            return View(recipes.ToList());
+            // not current user
+            if (user.Id != User.Identity.GetUserId())
+            {
+                return View(model);
+            }
+            // current user
+            return View("~/Views/Cookbooks/Current/Index.cshtml", model);
         }
 
         // GET: Cookbooks/Details/5

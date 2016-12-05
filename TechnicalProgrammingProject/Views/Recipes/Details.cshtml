@@ -7,6 +7,23 @@
     </div>
 
     <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            @using (Html.BeginForm("AddToCookbook", "Recipes", new { id = Model.ID }, FormMethod.Post, null))
+            {
+                @Html.AntiForgeryToken()
+                @Html.Hidden("returnUrl", (object)ViewBag.ReturnUrl)
+                <input class="btn btn-success hvr-round-corners" type="submit" value="Add" />
+            }
+            @using (Html.BeginForm("DeleteUpload", "Recipes", new { id = Model.ID }, FormMethod.Post, null))
+            {
+                @Html.AntiForgeryToken()
+                @Html.Hidden("returnUrl", (object)ViewBag.ReturnUrl)
+                <input type="submit" value="Delete" class="btn btn-default" />
+            }
+        </div>
+    </div>
+
+    <div class="row">
         <div id="myScrollspy" class="col-md-3">
             <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125">
                 <li class="active"><a href="#section-1">Title</a></li>
@@ -100,16 +117,5 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-9 col-md-offset-3">
-            @using (Html.BeginForm("DeleteUpload", "Recipes", new { id = Model.ID }, FormMethod.Post, null))
-            {
-                @Html.AntiForgeryToken()
-                @Html.Hidden("returnUrl", (object)ViewBag.ReturnUrl)
-                <input type="submit" value="Delete" class="btn btn-default" />
-            }
-        </div>
-    </div>
-    <br/>
-
+    
 </div>

@@ -11,9 +11,6 @@
             <h3>@Html.DisplayFor(modelItem => Model.Name)</h3>
             Rating: @Html.Action("getRatingAverage", "Recipes", new { recID = Model.ID })
         </div>
-        
-         <input class="btn btn-primary hvr-grow-shadow" type="button" value="Add to CookBook" />  
-         <input class="btn btn-primary hvr-grow-shadow" type="button" value="delete" />    
     </div>
 </div>
 }
@@ -30,8 +27,6 @@ else
                 <h3>@Html.DisplayFor(modelItem => Model.Name)</h3>
                 Rating: @Html.Action("getRatingAverage", "Recipes", new { recID = Model.ID })
             </div>
-
-            
         </div>
     </div>
 }

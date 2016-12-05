@@ -36,6 +36,8 @@ namespace TechnicalProgrammingProject.Controllers
                 return HttpNotFound();
             }
 
+            ViewBag.ReturnUrl = Request.Url;
+
             // find recipes
             var recipes = db.Recipes.Where(r => r.Cookbooks.Any(c => c.ApplicationUserID == user.Id));
 

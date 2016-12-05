@@ -1,12 +1,9 @@
 ﻿@model TechnicalProgrammingProject.Models.EditProfileViewModel
 
-@{
-    ViewBag.Title = "Edit Profile";
-}
-
 @Styles.Render("~/content/asset/css/profile.css")
 
-<h1>Edit Profile</h1>
+<h2>Edit Profile</h2>
+<hr />
 
 <div id="status">
     @ViewBag.StatusMessage
@@ -17,8 +14,6 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <hr />
-
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="col-md-4 avatar">
@@ -115,9 +110,6 @@
         </div>
     </div>
 }
-
-
-
 @section Scripts
 {
     @Scripts.Render("~/Content/asset/js/preview.js")

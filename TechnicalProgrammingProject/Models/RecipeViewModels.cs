@@ -128,9 +128,10 @@ namespace TechnicalProgrammingProject.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public string Image { get; set; }
+        public byte[] Image { get; set; }
         public DateTime? DateUploaded { get; set; }
         public string Status { get; set; }
+        [DisplayName("Delete")]
         public bool isDelete { get; set; }
     }
     public class DeleteRecipeViewModel

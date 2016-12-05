@@ -311,7 +311,7 @@ namespace TechnicalProgrammingProject.Controllers
                                     {
                                         ID = r.ID,
                                         Name = r.Name,
-                                        //Image = r.ImageURL,
+                                        Image = r.ImageURL,
                                         DateUploaded = r.DateUploaded,
                                         Status = r.Status,
                                         isDelete = false
@@ -344,6 +344,60 @@ namespace TechnicalProgrammingProject.Controllers
         }
 
         /// <summary>
+        /// Add to Cookbook.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="returnUrl"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult AddToCookbook(int id, string returnUrl)
+        {
+            try
+            {
+                //find user
+                var user = db.Users.Find(User.Identity.GetUserId());
+                //find cookbook
+                var cookbook = db.Cookbooks.Where(c => c.ApplicationUser.Id == user.Id).Single();
+                //find recipe to delete
+                var recipe = db.Recipes.Where(r => r.ID == id).Include(r => r.Ingredients).Single();
+                cookbook.Recipes.Add(recipe);
+                db.SaveChanges();
+            }
+            catch (InvalidOperationException)
+            {
+                return Redirect(returnUrl);
+            }
+            return Redirect(returnUrl);
+        }
+
+        /// <summary>
+        /// Delete cookbook recipe.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="returnUrl"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult DeleteCookbookRecipe(int id, string returnUrl)
+        {
+            try
+            {
+                //find user
+                var user = db.Users.Find(User.Identity.GetUserId());
+                //find cookbook
+                var cookbook = db.Cookbooks.Where(c => c.ApplicationUser.Id == user.Id).Single();
+                //find recipe to delete
+                var recipe = db.Recipes.Where(r => r.ID == id).Include(r => r.Ingredients).Single();
+                cookbook.Recipes.Remove(recipe);
+                db.SaveChanges();
+            }
+            catch (InvalidOperationException)
+            {
+                return Redirect(returnUrl);
+            }
+            return Redirect(returnUrl);
+        }
+
+        /// <summary>
         /// Delete uploaded recipe.
         /// </summary>
         /// <param name="id"></param>
@@ -352,9 +406,16 @@ namespace TechnicalProgrammingProject.Controllers
         [HttpPost]
         public ActionResult DeleteUpload(int id, string returnUrl)
         {
-            var recipe = db.Recipes.Where(r => r.ID == id).Include(r => r.Ingredients).Single();
-            db.Recipes.Remove(recipe);
-            db.SaveChanges();
+            try
+            {
+                var recipe = db.Recipes.Where(r => r.ID == id).Include(r => r.Ingredients).Single();
+                db.Recipes.Remove(recipe);
+                db.SaveChanges();
+            }
+            catch (InvalidOperationException)
+            {
+                return Redirect(returnUrl);
+            }
             return Redirect(returnUrl);
         }
 

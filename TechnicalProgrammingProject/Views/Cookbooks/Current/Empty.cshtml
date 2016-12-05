@@ -1,0 +1,13 @@
+﻿@model TechnicalProgrammingProject.Models.CookbookViewModel
+
+<hgroup class="title">
+    <h1>My Cookbook</h1>
+    <hr />
+</hgroup>
+
+<div>
+    <p>
+        There are no recipes in this cookbook!
+    </p>
+    <input type="button" class="btn btn-default" value="Back to your profile" onclick="location.href='@Url.Action("Index", "Profile")'" />
+</div>

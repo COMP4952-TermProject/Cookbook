@@ -1,12 +1,13 @@
 ﻿@model TechnicalProgrammingProject.Models.CookbookViewModel
 
 
-<h2>@Html.ActionLink(Model.DisplayName, "Index", "Profile", new { id = Model.ID }, null)'s Cookbook</h2>
+<h2>My Cookbook</h2>
 <hr />
 
 @using (Html.BeginForm("Search", "Cookbooks", FormMethod.Get, new { @class = "form-horizontal", role = "form" }))
 {
-    <input type="search" name="searchTerm" placeholder="Search..."/>
+    <input type="search" name="searchTerm" />
+    <input type="submit" value="Search By Name, Tag, or Ingredient" />
 }
 
 <p>@ViewBag.Message</p>

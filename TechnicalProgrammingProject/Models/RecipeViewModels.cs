@@ -117,6 +117,7 @@ namespace TechnicalProgrammingProject.Models
         {
             Recipes = new HashSet<Recipe>();
         }
+        public string ID { get; set; }
         public string UploaderName { get; set; }
         public virtual ICollection<Recipe> Recipes { get; set; }
     }

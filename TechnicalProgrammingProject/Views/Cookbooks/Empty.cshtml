@@ -1,12 +1,14 @@
-﻿@{
+﻿@model TechnicalProgrammingProject.Models.CookbookViewModel
+@{
     ViewBag.Title = "Cookbook";
 }
 
 <hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
+    <h1>@(Model.DisplayName)'s @ViewBag.Title.</h1>
 </hgroup>
 <div>
     <p>
-        You have no recipes in your cookbook!
+        There are no recipes in this cookbook!
+        Click @Html.ActionLink("here", "Index", "Profile", new { id = Model.ID }, null) to get back to the users profile.
     </p>
 </div>

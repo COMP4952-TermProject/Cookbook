@@ -10,6 +10,11 @@ namespace TechnicalProgrammingProject
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(
+                name: "Cookbook",
+                url: "Cookbooks/{id}",
+                defaults: new { controller = "Cookbooks", action = "Index" }
+            );
 
             routes.MapRoute(
                 name: "ProfileEdit",
@@ -20,7 +25,7 @@ namespace TechnicalProgrammingProject
             routes.MapRoute(
                 name: "Profile",
                 url: "Profile/{id}",
-                defaults: new { controller = "Profile", action = "Index"}
+                defaults: new { controller = "Profile", action = "Index" }
             );
 
             routes.MapRoute(

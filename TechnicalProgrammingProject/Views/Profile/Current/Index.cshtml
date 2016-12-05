@@ -1,0 +1,68 @@
+﻿@model TechnicalProgrammingProject.Models.ProfileViewModel
+
+
+@Styles.Render("~/content/asset/css/profile.css")
+
+<h2>My Profile</h2>
+<hr />
+
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-5 avatar">
+                    @Html.Image(Model.ProfilePicture, new { @class = "img-responsive img-thumbnail" })
+                    <div class="row">
+                        <br />
+                        <div class="col-md-12 link">
+                            <input type="button" class="btn btn-default" value="Edit Profile" onclick="location.href='@Url.Action("Edit")'" />
+                            <input type="button" class="btn btn-default" value="View Cookbook" onclick="location.href='@Url.Action("Index")'" />
+                            <input type="button" class="btn btn-default" value="View Uploads" onclick="location.href='@Url.Action("Uploads")'" />
+                            <input type="button" class="btn btn-default" value="Change Password" onclick="location.href='@Url.Action("ChangePassword")'" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-7 infoContainer">
+                    <table class="table">
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.DisplayName)</th>
+                            <th>@Html.DisplayFor(model => model.DisplayName)</th>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+                            <th>@Html.DisplayFor(model => model.FirstName)</th>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.LastName)</th>
+                            <th>@Html.DisplayFor(model => model.LastName)</th>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Email)</th>
+                            <th>@Html.DisplayFor(model => model.Email)</th>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Biography)</th>
+                            <th>@Html.DisplayFor(model => model.Biography)</th>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.DateOfBirth)</th>
+                            <th>@Html.DisplayFor(model => model.DateOfBirth)</th>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Age)</th>
+                            <th>@Html.DisplayFor(model => model.Age)</th>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Gender)</th>
+                            <th>@Html.DisplayFor(model => model.Gender)</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

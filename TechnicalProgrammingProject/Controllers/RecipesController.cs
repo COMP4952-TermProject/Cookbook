@@ -190,6 +190,7 @@ namespace TechnicalProgrammingProject.Controllers
             //create model to send to view
             var model = new UploadsViewModel
             {
+                ID = user.Id,
                 UploaderName = user.DisplayName,
                 Recipes = recipes.ToList()
             };
@@ -200,7 +201,7 @@ namespace TechnicalProgrammingProject.Controllers
                 return View(model);
             }
             //return logged in user's upload view
-            return View("CurrentUploads", model);
+            return View("~/Views/Recipes/Current/Uploads.cshtml", model);
         }
 
         /// <summary>

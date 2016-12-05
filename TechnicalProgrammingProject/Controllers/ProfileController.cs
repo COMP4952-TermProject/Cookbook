@@ -45,6 +45,7 @@ namespace TechnicalProgrammingProject.Controllers
 
             var model = new ProfileViewModel
             {
+                ID = user.Id,
                 DisplayName = user.DisplayName,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
@@ -60,12 +61,10 @@ namespace TechnicalProgrammingProject.Controllers
             if (id != User.Identity.GetUserId())
             {
                 return View(model); // Make a public viewModel for a profile. !!!!!!!!!!!!!!!!!!!!!!
-
-                // return View("CurrentProfile", model);
             }
 
             //direct to personal profile view
-            return View("CurrentProfile", model);
+            return View("~/Views/Profile/Current/index.cshtml", model);
         }
 
         public ActionResult Edit(ManageMessageId? message)

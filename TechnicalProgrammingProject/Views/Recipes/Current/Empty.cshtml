@@ -1,0 +1,14 @@
+﻿@model TechnicalProgrammingProject.Models.UploadsViewModel
+
+<hgroup class="title">
+    <h1>My Uploads</h1>
+    <hr />
+</hgroup>
+<div>
+    <p>
+        You have not uploaded any recipes!
+    </p>
+    <input type="button" class="btn btn-default" value="Upload a Recipe" onclick="location.href='@Url.Action("Create", "Recipes")'" />
+    <input type="button" class="btn btn-default" value="Delete Recipes" onclick="location.href='@Url.Action("Delete", "Recipes")'" />
+    <input type="button" class="btn btn-default" value="Back to your profile" onclick="location.href='@Url.Action("Index", "Profile")'" />
+</div>

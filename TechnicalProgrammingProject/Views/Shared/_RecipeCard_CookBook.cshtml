@@ -3,11 +3,11 @@
 @Styles.Render("~/Content/asset/css/recipeCard_CookBook.css")
 
 <div class="col-md-4 hvr-grow-shadow" id="cardbodies">
-    <div class="recipeCard">
+    <div class="recipeCards">
         <a href=@Url.Action("Details", "Recipes", new { id = Model.ID })>
-            @Html.Image(Model.ImageURL, new { @class = "img hvr-rotate" })
+             @Html.Image(Model.ImageURL, new { @class = "imges hvr-rotate" })            
         </a>
-        <div class="content">
+        <div class="contents">
             <h3>@Html.DisplayFor(modelItem => Model.Name)</h3>
             Rating: @Html.Action("getRatingAverage", "Recipes", new { recID = Model.ID })
         </div>

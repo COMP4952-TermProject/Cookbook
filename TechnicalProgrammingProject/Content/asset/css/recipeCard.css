@@ -1,83 +1,96 @@
-﻿.content{    
-    padding: 20px 20px;
-}
-#cardbody {
-    width:370px;
-    height: 100%;
-    border: 0.5px solid;   
-    margin: 10px 10px 10px 10px;
-    border-radius : 1%;
-    background-color: white;
+﻿
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .content{    
+        padding: 20px 20px;
+    }
+    #cardbody {
+        width: 370px;
+        height: 100%;
+        border: 0.5px solid;   
+        margin: 10px 10px 10px 10px;
+        border-radius : 1%;
+        background-color: white;
+    }
+
+    .imgs {
+        display: block;
+        margin: auto;
+        width: 330px;
+        height: 280px;
+        border-radius:20%;
+    }
+
+    .recipeCard{
+        margin: 20px auto;
+        text-align:center;   
+        border:0;
+        padding:0;
+        -moz-transition: all 1s;
+        -webkit-transition: all 1s;
+        -o-transition: all 1s;
+    }
+
+
+    #cardbody :hover .imgs{
+         animation: shadowThrob 0.9s infinite;
+        animation-direction: alternate;
+        -webkit-animation: shadowThrob 0.9s ease-out infinite;
+        -webkit-animation-direction: alternate;     
+    }
+    .recipeCard .btn {
+        margin-bottom: 30px;
+    }
+    @keyframes shadowThrob {
+	    from {box-shadow: 0 0 30px 10px rgba(255,106,0, 0.9);}
+	    to {box-shadow: 0 0 30px 10px rgba(255,106,0, 0.2);}
+    }
+    @-webkit-keyframes shadowThrob {
+	    from {box-shadow: 0 0 30px 10px rgba(255,106,0, 0.9);}
+	    to {box-shadow: 0 0 30px 10px rgba(255,106,0, 0.2);}
+    }
 }
 
-.img {
-    width: 330px;
-    height: 250px;
-}
 
-.recipeCard{
-    margin: 20px auto;
-    text-align:center;   
-    border:0;
-    padding:0;
-    -moz-transition: all 1s;
-    -webkit-transition: all 1s;
-    -o-transition: all 1s;
-}
+@media  all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {    
+    .content{    
+        padding: 20px 20px;
+    }
+    #cardbody {
+        width: 28%;
+        height: 100%;
+        border: 0.5px solid;   
+        margin: 13px 10px 11px 10px;
+        border-radius : 1%;
+        background-color: white;
+    }
+
+    .imgs {
+        display: block;
+        margin: auto;
+        width: 290px;
+        height: 280px;
+        border-radius:20%;
+    }
+
+    .recipeCard{
+        margin: 20px auto;
+        text-align:center;   
+        border:0;
+        padding:0;
+        -moz-transition: all 1s;
+        -webkit-transition: all 1s;
+        -o-transition: all 1s;
+    }
 
 
-#cardbody :hover .img{
-     animation: shadowThrob 0.9s infinite;
-    animation-direction: alternate;
-    -webkit-animation: shadowThrob 0.9s ease-out infinite;
-    -webkit-animation-direction: alternate;     
-}
-.btn {
-    margin-bottom: 30px;
-}
-
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 99; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-@keyframes shadowThrob {
-	from {box-shadow: 0 0 30px 10px rgba(255,106,0, 0.9);}
-	to {box-shadow: 0 0 30px 10px rgba(255,106,0, 0.2);}
-}
-@-webkit-keyframes shadowThrob {
-	from {box-shadow: 0 0 30px 10px rgba(255,106,0, 0.9);}
-	to {box-shadow: 0 0 30px 10px rgba(255,106,0, 0.2);}
+    #cardbody :hover .imgs{
+         animation: shadowThrob 0.9s infinite;
+        animation-direction: alternate;
+        -webkit-animation: shadowThrob 0.9s ease-out infinite;
+        -webkit-animation-direction: alternate;     
+    }
+    .recipeCard .btn {
+        margin-bottom: 30px;
+    }
 }

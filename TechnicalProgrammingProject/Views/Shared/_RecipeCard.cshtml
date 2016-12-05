@@ -5,7 +5,7 @@
 <div class="col-md-4 hvr-curl-bottom-right" id="cardbody">
     <div class="recipeCard">
         <a href=@Url.Action("Details", "Recipes", new { id = Model.ID })>
-                @Html.Image(Model.ImageURL, new { @class = "img  hvr-float-shadow" })
+                @Html.Image(Model.ImageURL, new { @class = "imgs  hvr-float-shadow" })
         </a>
         <div class="content">
             <h3>@Html.DisplayFor(modelItem => Model.Name)</h3>
@@ -22,7 +22,9 @@ else
     <div class="col-md-4 hvr-curl-bottom-right" id="cardbody">
         <div class="recipeCard">
             <a href=@Url.Action("Details", "Recipes", new { id = Model.ID })>
-                @Html.Image(Model.ImageURL, new { @class = "img  hvr-float-shadow" })
+                <div>
+                    @Html.Image(Model.ImageURL, new { @class = "imgs hvr-float-shadow" })
+                </div>
             </a>
             <div class="content">
                 <h3>@Html.DisplayFor(modelItem => Model.Name)</h3>

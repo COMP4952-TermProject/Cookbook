@@ -1,10 +1,8 @@
-﻿@model List<TechnicalProgrammingProject.Models.Recipe>
+﻿@model TechnicalProgrammingProject.Models.CookbookViewModel
 
-@{
-    ViewBag.Title = "Cookbook";
-}
 
-<h2> Your Cookbook Recipes</h2>
+<h2>@Html.ActionLink(Model.DisplayName, "Index", "Profile", new { id = Model.ID }, null)'s Cookbook</h2>
+<hr />
 
 @using (Html.BeginForm("Search", "Cookbooks", FormMethod.Get, new { @class = "form-horizontal", role = "form" }))
 {
@@ -15,7 +13,7 @@
 <p>@ViewBag.Message</p>
 
 <div class="row">
-    @foreach (var userRecipe in Model)
+    @foreach (var userRecipe in Model.Recipes)
     {
         @Html.Partial("_RecipeCard_CookBook", userRecipe);
     }

@@ -5,6 +5,10 @@
     padding: 0 20px;
 }
 
+input {
+    margin: 0px;
+}
+
 .infoContainer > .table th{
     border-top: none;
 }
@@ -46,4 +50,8 @@
 
 #Biography {
     resize: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
+
+

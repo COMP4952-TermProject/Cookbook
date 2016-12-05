@@ -2,20 +2,20 @@
 
 @Styles.Render("~/content/asset/css/profile.css")
 
-<h2>My Profile</h2>
+<h2>@Html.ActionLink(Model.DisplayName, "Index", "Profile", new { id = Model.ID }, null)'s Profile</h2>
+<hr />
 
 <div class="container">
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-        <hr />
         <div class="row">
             <div class="col-md-4 avatar">
-                <img src="~/Content/asset/images/avatar.jpg" alt="Profile image" class="img-responsive img-thumbnail" />
+                @Html.Image(Model.ProfilePicture, new { @class = "img-responsive img-thumbnail" })
                 <div class="row">
                     <div class="col-md-4 link">
-                        @Html.ActionLink("View Cookbook", "Index", "Cookbooks")
-                        @Html.ActionLink("View Uploads", "Uploads", "Recipes")
+                        <input type="button" class="btn btn-default" value="View Cookbook" onclick="location.href='@Url.Action("Index", "Cookbooks", new { id = Model.ID })'" />
+                        <input type="button" class="btn btn-default" value="View Uploads" onclick="location.href='@Url.Action("Uploads", "Recipes", new { id = Model.ID })'" />
                     </div>
                 </div>
             </div>

@@ -11,8 +11,12 @@
             <h3>@Html.DisplayFor(modelItem => Model.Name)</h3>
             Rating: @Html.Action("getRatingAverage", "Recipes", new { recID = Model.ID })
         </div>
-        <input class="btn btn-success hvr-round-corners" type="button" value="Details" />
-        <input class="btn btn-success hvr-round-corners" type="button" value="Delete" />
+        @using (Html.BeginForm("DeleteCookbookRecipe", "Recipes", new { id = Model.ID }, FormMethod.Post, null))
+        {
+            @Html.AntiForgeryToken()
+            @Html.Hidden("returnUrl", (object)ViewBag.ReturnUrl)
+            <input class="btn btn-success hvr-round-corners" type="submit" value="Delete" />
+        }
     </div>
 </div>
 
